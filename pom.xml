@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gjp</groupId>
+  <artifactId>zkclient</artifactId>
+  <packaging>jar</packaging>
+  <version>${project.release.version}</version>
+  <name>zkclient Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <java.version>1.8</java.version>
+    <project.release.version>0.0.1-SNAPSHOT</project.release.version>
+ </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	  <groupId>com.bea.commonj</groupId>
+	  <artifactId>com.springsource.commonj</artifactId>
+	  <version>1.1.0</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.gjp</groupId>
+	  <artifactId>zkclient</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>zkclient</finalName>
+    
+  </build>
+  <profiles>
+    <profile>
+        <id>product</id>
+        <properties>
+            <project.release.version>1.0</project.release.version>
+        </properties>
+    </profile>
+  </profiles>
+  <distributionManagement>
+	    <repository>
+	           <id>releases</id><!--这个ID需要与你的release仓库的Repository ID一致-->
+	           <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>snapshots</id><!--这个ID需要与你的snapshots仓库的Repository ID一致-->
+	        <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+	    </snapshotRepository>
+	</distributionManagement>
+</project>
