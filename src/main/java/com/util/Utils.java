@@ -8,6 +8,6 @@ public class Utils {
 	System.out.println(args);
 }
  public void test1() {
-	 System.out.println("hi");
+	 System.out.println("hi123");
  }
 }
